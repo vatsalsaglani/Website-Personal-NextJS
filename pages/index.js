@@ -1,88 +1,214 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from "react";
+import Head from "next/head";
+import {
+  ChakraProvider,
+  Container,
+  Box,
+  Text,
+  SimpleGrid,
+  IconButton,
+} from "@chakra-ui/react";
+import { CopyIcon } from "@chakra-ui/icons";
+import Link from "next/link";
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+import {
+  AiOutlineGithub,
+  AiFillLinkedin,
+  AiFillMediumSquare,
+  AiFillTwitterSquare,
+} from "react-icons/ai";
 
-    <Nav />
+import { SiGooglescholar } from "react-icons/si";
 
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
 
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
+const GoogleScholarIcon = () => (
+  <h1>
+    <SiGooglescholar size={30} color="white" />
+  </h1>
+);
+
+const GithubIcon = () => (
+  <h1>
+    <AiOutlineGithub size={30} color="white" />
+  </h1>
+);
+
+const LinkedInIcon = () => (
+  <h1>
+    <AiFillLinkedin size={30} color="white" />
+  </h1>
+);
+
+const MediumIcon = () => (
+  <h1>
+    <AiFillMediumSquare size={30} color="white" />
+  </h1>
+);
+
+const TwitterIcon = () => (
+  <h1>
+    <AiFillTwitterSquare size={30} color="white" />
+  </h1>
+);
+
+const Home = () => {
+  return (
+    <>
+      <Container minWidth="100%" minHeight="100vh" backgroundColor="#2E2E57">
+        <Head>
+          <title>Vatsal Saglani</title>
+        </Head>
+        <Box
+          minWidth="104%"
+          minHeight="10vh"
+          ml="-20px"
+          backgroundColor="gray.900"
+          mr="-20px"
         >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
-    </div>
+          <Container
+            minWidth="90%"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="space-around"
+          >
+            <Container>
+              <Box>
+                <Text
+                  fontWeight="bold"
+                  color="whiteAlpha.900"
+                  textAlign="left"
+                  fontSize="2xl"
+                  mt="30px"
+                  mb="30px"
+                >
+                  Vatsal Saglani
+                </Text>
+              </Box>
+            </Container>
+            <Container
+              display="flex"
+              justifyContent="flex-end"
+              flexDirection="row"
+              alignItems="center"
+            >
+              <Link href="https://appliedeverything.ml">
+                <a target="_blank">
+                  <Text
+                    fontWeight="bold"
+                    color="whiteAlpha.900"
+                    fontSize="lg"
+                    mr="20px"
+                  >
+                    Blogs
+                  </Text>
+                </a>
+              </Link>
+              <Link href="https://drive.google.com/file/d/1YE9H1fRa8KEOkt1hFL2Fg6kxyNv8Gixr/view?usp=sharing">
+                <a target="_blank">
+                  <Text
+                    fontWeight="bold"
+                    color="whiteAlpha.900"
+                    fontSize="lg"
+                    ml="20px"
+                    mr="10px"
+                  >
+                    Resume
+                  </Text>
+                </a>
+              </Link>
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
+              {/* <Text
+                fontWeight="bold"
+                color="whiteAlpha.900"
+                fontSize="lg"
+                ml="20px"
+                mr="10px"
+              >
+                Resume
+              </Text> */}
+            </Container>
+          </Container>
+        </Box>
+        <Container
+          minHeight="90%"
+          maxHeight="100%"
+          display="flex"
+          flexDirection="column"
+          alignItems="stretch"
+          justifyContent="center"
+          mt="25vh"
+        >
+          <SimpleGrid
+            columns={2}
+            spacingX={4}
+            spacingY={10}
+            minChildWidth="200px"
+            display="grid"
+            alignItems="center"
+          >
+            <Container>
+              <Box>
+                <Text
+                  fontWeight="bold"
+                  textAlign="left"
+                  color="whiteAlpha.900"
+                  fontSize="2xl"
+                  letterSpacing="wider"
+                >
+                  Deep Learning Engineer
+                </Text>
+              </Box>
+              <Box>
+                <Text color="whiteAlpha.700" fontSize="md" mt="5px">
+                  Python | PyTorch | Javascript | React{" "}
+                </Text>
+              </Box>
+            </Container>
+            <Container
+              display="flex"
+              justifyContent="space-between"
+              alignItems="stretch"
+            >
+              <Link href="https://github.com/vatsalsaglani">
+                <a target="_blank">
+                  <GithubIcon mr="12px" />
+                </a>
+              </Link>
+              <Link href="https://www.linkedin.com/in/vatsalsaglani/">
+                <a target="_blank">
+                  <LinkedInIcon ml="3px" mr="9px" />
+                </a>
+              </Link>
+              <Link href="https://thevatsalsaglani.medium.com">
+                <a target="_blank">
+                  <MediumIcon mr="9px" ml="3px" />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/saglanivatsal">
+                <a target="_blank">
+                  <TwitterIcon mr="9px" ml="3px" />
+                </a>
+              </Link>
+              <Link href="https://scholar.google.com/citations?user=3RB_jh0AAAAJ&hl=en">
+                <a target="_blank">
+                  <GoogleScholarIcon mr="9px" ml="3px" />
+                </a>
+              </Link>
+            </Container>
+          </SimpleGrid>
+        </Container>
+      </Container>
+      <style jsx>
+        {`
+          #__next {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            font-family: "DM Mono", monospace;
+          }
+        `}
+      </style>
+    </>
+  );
+};
 
-export default Home
+export default Home;
